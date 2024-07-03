@@ -4,7 +4,7 @@
     <AppHeader></AppHeader>
     <!-- 频道模块 -->
     <van-tabs>
-      <van-tab v-for="item in 10" :key="item" title="频道" />
+      <van-tab v-for="item in channelList" :key="item.id" :title="item.name" />
     </van-tabs>
     <!-- 视频列表 -->
     <div class="video-list">
@@ -30,7 +30,12 @@
   </div>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+/* 默认请求方式是get */
+/* 返回的数据自动通过ref包装了 */
+const { data: channelList } = await useFetch('/api/channel', { method: 'GET' });
+console.log('[result]——》',channelList.value);
+</script>
 
 <style lang="scss">
 // 公共头部
