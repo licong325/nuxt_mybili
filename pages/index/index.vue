@@ -8,23 +8,23 @@
     </van-tabs>
     <!-- 视频列表 -->
     <div class="video-list">
-      <NuxtLink class="v-card" v-for="item in 20" :key="item" :to="`/video/0`">
+      <NuxtLink class="v-card" v-for="item in videoList" :key="item.aid" :to="`/video/0`">
         <div class="card">
           <div class="card-img">
-            <img class="pic" src="@/assets/images/loading.png" alt="当你觉得扛不住的时候来看看这段视频" />
+            <img class="pic" :src="item.pic" :alt="item.title" />
           </div>
           <div class="count">
             <span>
               <i class="iconfont icon_shipin_bofangshu"></i>
-              676.2万
+              {{ item.stat.view }}
             </span>
             <span>
               <i class="iconfont icon_shipin_danmushu"></i>
-              1.6万
+              {{ item.stat.danmaku }}
             </span>
           </div>
         </div>
-        <p class="title">当你觉得扛不住的时候来看看这段视频</p>
+        <p class="title">{{ item.title }}</p>
       </NuxtLink>
     </div>
   </div>
@@ -34,7 +34,10 @@
 /* 默认请求方式是get */
 /* 返回的数据自动通过ref包装了 */
 const { data: channelList } = await useFetch('/api/channel', { method: 'GET' });
-console.log('[result]——》',channelList.value);
+console.log('[result]——》', channelList.value);
+
+const { data: videoList } = await useFetch('/api/video', { method: 'GET' });
+console.log('[videoList]——》', videoList.value);
 </script>
 
 <style lang="scss">
@@ -96,6 +99,7 @@ console.log('[result]——》',channelList.value);
     overflow: hidden;
     .card-img {
       .pic {
+        display: block;
         height: 100px;
         width: 100%;
         object-fit: cover;
