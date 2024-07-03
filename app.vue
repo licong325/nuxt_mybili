@@ -15,7 +15,7 @@
  * ogDescription: 设置 Open Graph 描述，同样在页面分享时使用。
  * ogImage: 设置 Open Graph 图片，当页面分享时显示。
  * twitterCard: 设置 Twitter 卡片类型。在这种情况下，summary_large_image 表示带有大图的摘要卡片。
-*/
+ */
 useSeoMeta({
   title: '这是一个牛逼的网站',
   ogTitle: 'My Amazing Site',
@@ -25,3 +25,9 @@ useSeoMeta({
   twitterCard: 'summary_large_image',
 });
 </script>
+<style>
+:root {
+  /* css变量设置主题色，这里不适用scoped，需要全局生效 */
+  --van-primary-color: #fb7299;
+}
+</style>
