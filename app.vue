@@ -7,3 +7,21 @@
     <NuxtPage />
   </div>
 </template>
+<script setup lang="ts">
+/**
+ * title: 设置网页的标题。
+ * ogTitle: 设置 Open Graph 标题，当页面在社交媒体上分享时会使用。
+ * description: 设置页面的 meta 描述，有助于搜索引擎优化。
+ * ogDescription: 设置 Open Graph 描述，同样在页面分享时使用。
+ * ogImage: 设置 Open Graph 图片，当页面分享时显示。
+ * twitterCard: 设置 Twitter 卡片类型。在这种情况下，summary_large_image 表示带有大图的摘要卡片。
+*/
+useSeoMeta({
+  title: '这是一个牛逼的网站',
+  ogTitle: 'My Amazing Site',
+  description: 'This is my amazing site, let me tell you all about it.',
+  ogDescription: 'This is my amazing site, let me tell you all about it.',
+  ogImage: 'https://example.com/image.png',
+  twitterCard: 'summary_large_image',
+});
+</script>
