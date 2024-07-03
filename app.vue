@@ -1,8 +1,8 @@
 <template>
   <div>
     <!-- 基于文件的路由系统 -->
-    <NuxtLink to="/">Home</NuxtLink><br />
-    <NuxtLink to="/video">Video</NuxtLink>
+    <!-- <NuxtLink to="/">Home</NuxtLink><br /> -->
+    <!-- <NuxtLink to="/video">Video</NuxtLink> -->
     <!-- NuxtPage相当于Router-view -->
     <NuxtPage />
   </div>
@@ -25,9 +25,13 @@ useSeoMeta({
   twitterCard: 'summary_large_image',
 });
 </script>
-<style>
+<style lang="scss">
 :root {
   /* css变量设置主题色，这里不适用scoped，需要全局生效 */
   --van-primary-color: #fb7299;
 }
+// 基础样式
+@import './assets/styles/base.scss';
+// 字体图标
+@import './assets/styles/iconfont.scss';
 </style>
