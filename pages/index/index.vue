@@ -9,7 +9,7 @@
     <!-- 视频列表 -->
     <van-list v-model:loading="loading" :finished="finished" finished-text="别翻了，没有了" @load="onLoad">
       <div class="video-list">
-        <NuxtLink class="v-card" v-for="item in list" :key="item.aid" :to="`/video/0`">
+        <NuxtLink class="v-card" v-for="item in list" :key="item.aid" :to="`/video/${item.bvid}`">
           <div class="card">
             <div class="card-img">
               <img class="pic" :src="item.pic" :alt="item.title" />
