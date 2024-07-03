@@ -4,7 +4,8 @@
     <!-- <NuxtLink to="/">Home</NuxtLink><br /> -->
     <!-- <NuxtLink to="/video">Video</NuxtLink> -->
     <!-- NuxtPage相当于Router-view -->
-    <NuxtPage />
+    <NuxtPage :keepalive="{ max: 3 }" />
+    <!-- 缓存页面，提升切换体验，最多三个 -->
   </div>
 </template>
 <script setup lang="ts">
