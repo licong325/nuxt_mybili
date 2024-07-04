@@ -24,6 +24,8 @@ useSeoMeta({
   ogDescription: 'This is my amazing site, let me tell you all about it.',
   ogImage: 'https://example.com/image.png',
   twitterCard: 'summary_large_image',
+  // 避开 B站 防盗链
+  referrer: 'no-referrer',
 });
 </script>
 <style lang="scss">
